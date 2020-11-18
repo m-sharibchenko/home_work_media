@@ -1,0 +1,266 @@
+body {
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    line-height: 30px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.featured-products {
+    padding: 30px;
+}
+
+.featured-products-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-title {
+    margin: 0 0 15px 0;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+}
+
+.view-filter-wrapper {
+    min-width: 350px;
+    margin-bottom: 50px;
+}
+
+.view-filter {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.filter-element {
+    min-height: 28px;
+    background-color: inherit;
+    border: 0;
+    position: relative;
+    font-size: 14px;
+    font-weight: 600;
+    color: #737373;
+}
+
+.filter-element:hover, .filter-element:active, .filter-element:focus {
+    cursor: pointer;
+    outline: none;
+    color: #2091F9;
+}
+
+.filter-element::after {
+    content: '';
+    position: absolute;
+    width: 39px;
+    height: 2px;
+    background: #2091F9;
+    bottom: -10px;
+    left: calc(50% - 39px/2);
+    visibility: hidden;
+}
+
+.filter-element:hover::after, .filter-element:active::after, .filter-element:focus::after {
+    visibility: visible;
+}
+
+.featured-products-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 242px);
+    grid-gap: 40px;
+    justify-content: center;
+}
+
+.item-container {
+    max-width: 242px;
+    max-height: 414px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.picture-wrapper {
+    width: 100%;
+    height: 414px; /* так не добавляется 10px снизу от картинки */
+    /*height: 100%; !* так добавляется *!*/
+    position: relative;
+}
+
+.like {
+    width: 38px;
+    height: 38px;
+    border: 0;
+    padding: 0;
+    background: url("img/avatar.svg");
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.like:active, .like:focus {
+    background: url("img/avatar_active.svg");
+    outline: none;
+}
+
+.picture {
+    border-radius: 10px;
+}
+
+.option-wrapper {
+    width: 100%;
+    padding: 14px 0;
+    position: relative;
+    bottom: 0;
+}
+
+.option:not(:last-child) {
+    margin-bottom: 14px;
+}
+
+.item-name {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.item-name span {
+    color: #8a8a8a;
+}
+
+.item-price {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.item-colors {
+    display: flex;
+}
+
+.item-color-wrapper:not(:last-child) {
+    margin-right: 8px;
+}
+
+.item-color {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px 0 #868686;
+    cursor: pointer;
+    padding: 0;
+}
+
+.item-color:active, .item-color:focus {
+    outline: none;
+    border: 3px solid #2091f9;
+}
+
+.color-blue {
+    background-color: #2091F9;
+}
+
+.color-green {
+    background-color: #2DC071;
+}
+
+.color-orange {
+    background-color: #E77C40;
+}
+
+.color-black {
+    background-color: #000000;
+}
+
+.item-sizes{
+    display: flex;
+}
+
+.item-size-wrapper:not(:last-child) {
+    margin-right: 5px;
+}
+
+.item-size {
+    width: 34px;
+    height: 30px;
+    text-align: center;
+    background-color: inherit;
+    border: 1px solid #E4E4E4;
+    color: #737373;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.item-size:active, .item-size:focus {
+    outline: none;
+    border: 2px solid #2091F9;
+}
+
+@media (max-width: 1165px) {
+
+    .item-container {
+        overflow: hidden;
+    }
+
+    .option-wrapper {
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 10px;
+        padding-left: 4px;
+        box-sizing: border-box;
+        transition: bottom 0.1s linear;
+    }
+
+    .item-name span {
+        color: #ffffff;
+    }
+
+    .size {
+        border: 1px solid #4f4f4f;
+        color: #4f4f4f;
+    }
+
+    .item-container:hover .option-wrapper {
+        bottom: 222px;
+    }
+
+    .like {
+        visibility: hidden;
+    }
+
+    .item-container:hover .like {
+        visibility: visible;
+    }
+
+}
+
+@media (max-width: 413px) {
+
+    .featured-products {
+        padding: 10px;
+    }
+
+    .section-title {
+        margin: 0 0 5px 0;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .view-filter-wrapper {
+        min-width: 90%;
+        margin-bottom: 25px;
+    }
+
+}
