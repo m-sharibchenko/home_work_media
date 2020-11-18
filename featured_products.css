@@ -91,8 +91,8 @@ ul {
 
 .picture-wrapper {
     width: 100%;
-    height: 414px; /* так не добавляется 10px снизу от картинки */
-    /*height: 100%; !* так добавляется *!*/
+    /*height: 414px; !* так не добавляется 10px снизу от картинки *!*/
+    height: 100%; /* так добавляется */
     position: relative;
 }
 
@@ -115,12 +115,13 @@ ul {
 }
 
 .picture {
+    width: 100%;
     border-radius: 10px;
 }
 
 .option-wrapper {
     width: 100%;
-    padding: 14px 0;
+    padding: 14px 4px;
     position: relative;
     bottom: 0;
 }
@@ -218,13 +219,12 @@ ul {
     .option-wrapper {
         background-color: rgba(255, 255, 255, 0.6);
         border-radius: 10px;
-        padding-left: 4px;
         box-sizing: border-box;
         transition: bottom 0.1s linear;
     }
 
     .item-name span {
-        color: #ffffff;
+        color: #404040;
     }
 
     .size {
@@ -233,7 +233,7 @@ ul {
     }
 
     .item-container:hover .option-wrapper {
-        bottom: 222px;
+        bottom: 232px;
     }
 
     .like {
@@ -242,6 +242,59 @@ ul {
 
     .item-container:hover .like {
         visibility: visible;
+    }
+
+}
+
+@media (max-width: 1024px) {
+
+    .featured-products-items {
+        grid-template-columns: repeat(auto-fit, 200px);
+        grid-gap: 40px;
+        justify-content: center;
+    }
+
+    .option-wrapper {
+        padding: 10px 4px;
+    }
+
+    .item-container {
+        overflow: hidden;
+        max-width: 200px;
+        max-height: 342px;
+    }
+
+    .item-container:hover .option-wrapper {
+        bottom: 200px;
+    }
+
+    .option:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .item-name {
+        font-size: 1em;
+        line-height: 25px;
+    }
+
+    .item-price {
+        font-size: 18px;
+    }
+
+    .item-color {
+        width: 25px;
+        height: 25px;
+
+    }
+
+    .item-size {
+        width: 30px;
+        height: 26px;
+        font-size: 10px;
+    }
+
+    .item-container:hover .option-wrapper {
+        bottom: 200px;
     }
 
 }
