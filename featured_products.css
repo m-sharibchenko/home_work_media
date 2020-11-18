@@ -259,9 +259,8 @@ ul {
     }
 
     .item-container {
-        overflow: hidden;
-        max-width: 200px;
-        max-height: 342px;
+        max-width: 100%;
+        max-height: 100%;
     }
 
     .item-container:hover .option-wrapper {
@@ -297,6 +296,14 @@ ul {
         bottom: 200px;
     }
 
+}
+
+@media (max-width: 995px) {
+
+    .item-container {
+        overflow: hidden;
+        max-height: 352px;
+    }
 }
 
 @media (max-width: 413px) {
