@@ -34,20 +34,20 @@ ul {
 }
 
 .view-filter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
     margin: 0;
     padding: 0;
     list-style-type: none;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 }
 
 .filter-element {
     min-height: 28px;
+    position: relative;
     background-color: inherit;
     border: 0;
-    position: relative;
     font-size: 14px;
     font-weight: 600;
     color: #737373;
@@ -61,12 +61,12 @@ ul {
 
 .filter-element::after {
     content: '';
-    position: absolute;
     width: 39px;
     height: 2px;
-    background: #2091F9;
+    position: absolute;
     bottom: -10px;
     left: calc(50% - 39px/2);
+    background: #2091F9;
     visibility: hidden;
 }
 
@@ -91,21 +91,20 @@ ul {
 
 .picture-wrapper {
     width: 100%;
-    /*height: 414px; !* так не добавляется 10px снизу от картинки *!*/
-    height: 100%; /* так добавляется */
+    height: 100%;
     position: relative;
 }
 
 .like {
     width: 38px;
     height: 38px;
-    border: 0;
-    padding: 0;
-    background: url("img/avatar.svg");
     position: absolute;
     top: 10px;
     right: 10px;
     z-index: 1;
+    border: 0;
+    padding: 0;
+    background: url("img/avatar.svg");
     cursor: pointer;
 }
 
@@ -117,6 +116,7 @@ ul {
 .picture {
     width: 100%;
     border-radius: 10px;
+    display: block;
 }
 
 .option-wrapper {
